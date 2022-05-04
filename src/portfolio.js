@@ -1,12 +1,12 @@
 const header = {
   // all the properties are optional - can be left empty or deleted
   homepage: 'https://vanshikarana.vercel.app/',
-  title: 'VR',
+  title: 'VS',
 }
 
 const about = {
   // all the properties are optional - can be left empty or deleted
-  name: 'Vanshika Rana',
+  name: 'Vansh Sharma',
   role: 'Software Developer',
   description:
     "I love to develop websites and play around with different technologies. I have also worked with languages like Java and Python. I am highly motivated and responsible towards my work. If my knowledge of programming and technologies can be put to good use by you or your organization you can reach out to me by email.",
@@ -68,7 +68,7 @@ const skills = [
 
 const contact = {
  
-  email: 'ranavanshika172000@gmail.com',
+  email: 'vanshsharma9354@gmail.com',
 }
 
 export { header, about, projects, skills, contact }
