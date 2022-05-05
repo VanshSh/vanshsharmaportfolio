@@ -4,7 +4,7 @@ const Footer = () => (
   <footer className='footer'>
     Made with ❤️ by &nbsp;
     <a
-      href='https://github.com/Vanshika-Rana'
+      href='https://github.com/VanshSh'
       className='link footer__link'
     >
       Vanshika Rana
