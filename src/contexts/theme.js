@@ -3,32 +3,25 @@ import PropTypes from 'prop-types'
 
 const ThemeContext = createContext()
 
+const localTheme = localStorage.getItem('themeName')
 const ThemeProvider = ({ children }) => {
-  const [themeName, setThemeName] = useState('light')
+    const [themeName, setThemeName] = useState(localTheme || 'light')
 
-  useEffect(() => {
-    const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    setThemeName(darkMediaQuery.matches ? 'dark' : 'light')
-    darkMediaQuery.addEventListener('change', (e) => {
-      setThemeName(e.matches ? 'dark' : 'light')
-    });
-  }, [])
+    const toggleTheme = () => {
+        const name = themeName === 'dark' ? 'light' : 'dark'
+        localStorage.setItem('themeName', name)
+        setThemeName(name)
+    }
 
-  const toggleTheme = () => {
-    const name = themeName === 'dark' ? 'light' : 'dark'
-    localStorage.setItem('themeName', name)
-    setThemeName(name)
-  }
-
-  return (
-    <ThemeContext.Provider value={[{ themeName, toggleTheme }]}>
-      {children}
-    </ThemeContext.Provider>
-  )
+    return (
+        <ThemeContext.Provider value={[{ themeName, toggleTheme }]}>
+            {children}
+        </ThemeContext.Provider>
+    )
 }
 
 ThemeProvider.propTypes = {
-  children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 }
 
 export { ThemeProvider, ThemeContext }

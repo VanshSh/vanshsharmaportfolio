@@ -9,8 +9,8 @@
 .light {
     --clr-bg: #fcfcfc;
     --clr-bg-alt: #fff;
-    --clr-fg: rgb(35, 35, 35);
-    --clr-fg-alt: rgb(25, 25, 25);
+    --clr-fg: #05131d;
+    --clr-fg-alt: #103048;
     --clr-primary: #0471a6;
     --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }

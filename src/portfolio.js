@@ -1,15 +1,15 @@
 const header = {
   // all the properties are optional - can be left empty or deleted
-  homepage: '',
+  homepage: 'Vansh Sharma',
   title: 'VS',
 }
 
 const about = {
     // all the properties are optional - can be left empty or deleted
     name: 'Vansh Sharma',
-    role: 'Software Developer',
+    role: 'Frontend Developer',
     description: 'I am sel taught web developer.',
-    resume: '',
+    resume: 'Resume',
     social: {
         linkedin: 'https://www.linkedin.com/in/vanshsharma27/',
         github: 'https://github.com/VanshSh',
@@ -21,9 +21,9 @@ const projects = [
   // projects can be added an removed
   // if there are no projects, Projects section won't show up
   {
-    name: 'Project1',
+    name: 'CryptoX',
     description:
-      'It is Projecct1',
+      'It is a Crypto Currency Tracking Application. It is a web application that allows users to track the price of any crypto currency. ',
     stack: ['React'],
     sourceCode: '',
     livePreview: '',
