@@ -48,7 +48,6 @@ main {
 
 .link {
     color: var(--clr-primary);
-    padding: 0 0 0.3em 0;
     position: relative;
 }
 
@@ -74,7 +73,6 @@ main {
 
 .link--nav {
     color: var(--clr-fg);
-    text-transform: lowercase;
     font-weight: 500;
 }
 
@@ -88,7 +86,8 @@ main {
     padding: 0.8em 1.4em;
     font-weight: 500;
     font-size: 0.9rem;
-    text-transform: lowercase;
+    text-transform: uppercase;
+
     transition: transform 0.2s ease-in-out;
 }
 
