@@ -7,26 +7,28 @@ import Skills from './components/Skills/Skills'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
+import Blogs from './components/Blogs/Blogs'
 import './App.css'
 
 const App = () => {
-  const [{ themeName }] = useContext(ThemeContext)
+    const [{ themeName }] = useContext(ThemeContext)
 
-  return (
-    <div id='top' className={`${themeName} app`}>
-      <Header />
+    return (
+        <div id='top' className={`${themeName} app`}>
+            <Header />
 
-      <main>
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
+            <main>
+                <About />
+                <Blogs />
+                <Skills />
+                <Projects />
+                <Contact />
+            </main>
 
-      <ScrollToTop />
-      <Footer />
-    </div>
-  )
+            <ScrollToTop />
+            <Footer />
+        </div>
+    )
 }
 
 export default App
