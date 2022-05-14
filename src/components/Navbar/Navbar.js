@@ -18,7 +18,7 @@ const Navbar = () => {
                 onClick={toggleTheme}
                 className='btn btn--icon nav__theme'
                 aria-label='toggle theme'
-                style={{border:'none'}}
+                style={{ border: 'none' }}
             >
                 {themeName === 'dark' ? (
                     <WbSunnyRoundedIcon />
@@ -53,7 +53,15 @@ const Navbar = () => {
                         </a>
                     </li>
                 ) : null}
-
+                <li className='nav__list-item'>
+                    <a
+                        href='#blogs'
+                        onClick={toggleNavList}
+                        className='link link--nav'
+                    >
+                        Blogs
+                    </a>
+                </li>
                 {contact.email ? (
                     <li className='nav__list-item'>
                         <a

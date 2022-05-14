@@ -1,51 +1,53 @@
 import React from 'react'
 import AliceCarousel from 'react-alice-carousel'
-// import { Link } from 'react-router-dom'
-// import axios from 'axios'
+import axios from 'axios'
+import { useQuery } from 'react-query'
 
-const DUMMY_DATA = [
-    {
-        id: 1,
-        title: 'CryptoX',
-    },
-    {
-        id: 2,
-        title: 'Crypto',
-    },
-    {
-        id: 3,
-        title: 'Crypt',
-    },
-    {
-        id: 4,
-        title: 'Cryp',
-    },
-    {
-        id: 4,
-        title: 'Cryp',
-    },
-    {
-        id: 4,
-        title: 'Cryp',
-    },
-    {
-        id: 4,
-        title: 'Cryp',
-    },
-    {
-        id: 4,
-        title: 'Cryp',
-    },
-]
+const endpoint = 'https://api.hashnode.com/'
+const ARTICLE_QUERY = `
+  {
+    user(username: "vanshsharma") {
+      publication {
+        posts(page: 0) {
+          title
+          brief
+          slug
+         coverImage 
+        }
+      }
+    }
+  }
 
+`
 const Blogs = () => {
-    const item = DUMMY_DATA.map((item) => {
-        return (
-            <>
-                <p>{item.title}</p>
-            </>
-        )
+    const { data, isLoading, error } = useQuery('launches', async () => {
+        const response = await axios({
+            url: endpoint,
+            method: 'POST',
+            data: {
+                query: ARTICLE_QUERY,
+            },
+        })
+        return response.data.data
     })
+
+    const blogsData = data.map((item)=>{
+        return item
+    }) 
+
+
+    console.log(blogsData)
+
+    // const blogs = data.publication.posts?.map((post, i) => (
+    //     <div key={i}>
+    //         title={post.title}
+    //         link={`https://<your hashnode domain>/${post.slug}`}
+    //         imgUrl={`${post.coverImage}`}
+    //     </div>
+    // ))
+
+    if (isLoading) return 'Loading...'
+    if (error) return <div>{error.message}</div>
 
     const responsive = {
         0: {
@@ -65,7 +67,9 @@ const Blogs = () => {
     }
 
     return (
-        <div>
+        <section id='blogs' className='section'>
+            <h2 className='section__title'>Latest Blogs</h2>
+
             <AliceCarousel
                 mouseTracking
                 infinite
@@ -74,10 +78,10 @@ const Blogs = () => {
                 disableDotsControls
                 disableButtonsControls
                 responsive={responsive}
-                items={item}
+                // items={blogs}
                 autoPlay
             />
-        </div>
+        </section>
     )
 }
 

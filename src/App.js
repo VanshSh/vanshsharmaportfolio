@@ -8,26 +8,30 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 import Blogs from './components/Blogs/Blogs'
+import { QueryClient, QueryClientProvider } from 'react-query'
 import './App.css'
 
 const App = () => {
     const [{ themeName }] = useContext(ThemeContext)
+    const queryClient = new QueryClient()
 
     return (
-        <div id='top' className={`${themeName} app`}>
-            <Header />
+        <QueryClientProvider client={queryClient}>
+            <div id='top' className={`${themeName} app`}>
+                <Header />
 
-            <main>
-                <About />
-                <Blogs />
-                <Skills />
-                <Projects />
-                <Contact />
-            </main>
+                <main>
+                    <About />
+                    <Skills />
+                    <Projects />
+                    <Blogs />
+                    <Contact />
+                </main>
 
-            <ScrollToTop />
-            <Footer />
-        </div>
+                <ScrollToTop />
+                <Footer />
+            </div>
+        </QueryClientProvider>
     )
 }
 

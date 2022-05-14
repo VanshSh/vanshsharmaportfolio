@@ -5,6 +5,7 @@ import 'react-alice-carousel/lib/alice-carousel.css'
 import './index.css'
 
 render(
+
   <ThemeProvider>
     <App />
   </ThemeProvider>,
