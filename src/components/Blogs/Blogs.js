@@ -2,6 +2,8 @@ import React from 'react'
 import AliceCarousel from 'react-alice-carousel'
 import axios from 'axios'
 import { useQuery } from 'react-query'
+import BlogCard from './BlogCard'
+import './Blogs.css'
 
 const endpoint = 'https://api.hashnode.com/'
 const ARTICLE_QUERY = `
@@ -9,10 +11,12 @@ const ARTICLE_QUERY = `
     user(username: "vanshsharma") {
       publication {
         posts(page: 0) {
+            
+        coverImage 
+        _id
           title
           brief
           slug
-         coverImage 
         }
       }
     }
@@ -30,39 +34,29 @@ const Blogs = () => {
         })
         return response.data.data
     })
-
-    const blogsData = data.map((item)=>{
-        return item
-    }) 
-
-
-    console.log(blogsData)
-
-    // const blogs = data.publication.posts?.map((post, i) => (
-    //     <div key={i}>
-    //         title={post.title}
-    //         link={`https://<your hashnode domain>/${post.slug}`}
-    //         imgUrl={`${post.coverImage}`}
-    //     </div>
-    // ))
-
-    if (isLoading) return 'Loading...'
     if (error) return <div>{error.message}</div>
+
+    const blogs = data?.user?.publication?.posts
+
+    const blogsData = blogs?.map((item) => {
+        if (isLoading) return 'Loading...'
+        return <BlogCard key={item._id} data={item} />
+    })
 
     const responsive = {
         0: {
-            items: 2,
+            items: 1,
         },
-        512: {
+
+        750: {
             items: 2,
         },
 
-        630: {
+        1000: {
+            items: 2,
+        },
+        1200: {
             items: 3,
-        },
-
-        820: {
-            items: 4,
         },
     }
 
@@ -78,7 +72,7 @@ const Blogs = () => {
                 disableDotsControls
                 disableButtonsControls
                 responsive={responsive}
-                // items={blogs}
+                items={blogsData}
                 autoPlay
             />
         </section>

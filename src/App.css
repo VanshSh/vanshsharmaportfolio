@@ -87,7 +87,6 @@ main {
     font-weight: 500;
     font-size: 0.9rem;
     text-transform: uppercase;
-
     transition: transform 0.2s ease-in-out;
 }
 
@@ -150,3 +149,4 @@ main {
         margin-top: 4em;
     }
 }
+
