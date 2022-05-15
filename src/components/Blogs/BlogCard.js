@@ -8,7 +8,7 @@ import { Button, CardActionArea, CardActions, Link } from '@mui/material'
 export default function BlogCard(data) {
     const { coverImage, title, brief, slug } = data.data || {}
     return (
-        <Card sx={{ width: '100%', margin: '2rem' }}>
+        <Card sx={{ width: '100%', margin: '2em' }}>
             <CardActionArea>
                 <CardMedia
                     component='img'
