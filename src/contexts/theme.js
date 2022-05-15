@@ -1,10 +1,11 @@
-import { createContext,  useState } from 'react'
+import { createContext, useState } from 'react'
 import PropTypes from 'prop-types'
 
 const ThemeContext = createContext()
 
 const localTheme = localStorage.getItem('themeName')
 const ThemeProvider = ({ children }) => {
+    const [open, setOpen] = useState(false)
     const [themeName, setThemeName] = useState(localTheme || 'light')
 
     const toggleTheme = () => {
@@ -14,7 +15,9 @@ const ThemeProvider = ({ children }) => {
     }
 
     return (
-        <ThemeContext.Provider value={[{ themeName, toggleTheme }]}>
+        <ThemeContext.Provider
+            value={[{ themeName, toggleTheme, open, setOpen }]}
+        >
             {children}
         </ThemeContext.Provider>
     )

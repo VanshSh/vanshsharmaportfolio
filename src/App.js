@@ -9,6 +9,7 @@ import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 import Blogs from './components/Blogs/Blogs'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import Notification from './Items/Snackbar'
 import './App.css'
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
         <QueryClientProvider client={queryClient}>
             <div id='top' className={`${themeName} app`}>
                 <Header />
+                <Notification />
 
                 <main>
                     <About />
