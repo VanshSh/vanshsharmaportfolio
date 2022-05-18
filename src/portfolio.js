@@ -3,7 +3,7 @@ const header = {
   homepage: 'Vansh Sharma',
   title: 'VS',
 }
-https://github.com/VanshSh/vanshsharmaportfolio/blob/master/public/og_image.png
+
 const about = {
     // all the properties are optional - can be left empty or deleted
     name: 'Vansh Sharma',
