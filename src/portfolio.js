@@ -9,7 +9,7 @@ const about = {
     name: 'Vansh Sharma',
     role: 'Frontend Developer',
     description: `I'm self-taught passionate Frontend Developer from India. I am passionate about creating beautiful and functional web apps. I'm also a fan of the latest technologies and I'm always learning new things. I am regular technical blogs writer and keep sharing the Web Development related content on social media.`,
-    resume: 'https://drive.google.com/file/d/1-Uf5VUE4iQmOXSzdJUxe8ejkawStf2cG/view?usp=sharing',
+    resume: 'https://rxresu.me/vanshsharma9354/vansh-sharma',
     social: {
         linkedin: 'https://www.linkedin.com/in/vanshsharma27/',
         github: 'https://github.com/VanshSh',
