@@ -11,6 +11,7 @@ import Blogs from './components/Blogs/Blogs'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import Notification from './Items/Snackbar'
 import './App.css'
+import SendMail from './components/SendMail/SendMail'
 
 const App = () => {
     const [{ themeName }] = useContext(ThemeContext)
@@ -27,7 +28,7 @@ const App = () => {
                     <Skills />
                     <Projects />
                     <Blogs />
-                    <Contact />
+                    <SendMail />
                 </main>
 
                 <ScrollToTop />

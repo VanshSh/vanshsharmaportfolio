@@ -1,6 +1,7 @@
 .contact {
   flex-direction: column;
 }
+
 form {
   display: flex;
   width: 65%;
@@ -12,6 +13,7 @@ form {
   align-items: center;
   justify-content: center;
 }
+
 input {
   width: 80%;
   height: 3em;
@@ -21,6 +23,7 @@ input {
   padding: 0.5em;
   margin-bottom: 2em;
 }
+
 textarea {
   width: 80%;
   height: 5em;
@@ -30,6 +33,7 @@ textarea {
   padding: 0.5em;
   margin-bottom: 2em;
 }
+
 .submitButton {
   width: 30%;
   height: 3em;
@@ -42,6 +46,7 @@ textarea {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
+
 .submitButton:hover {
   transform: scale(0.9);
 }
