@@ -1,6 +1,6 @@
 <div align="center">
 
-![Logo](./public/favicon_io/android-chrome-192x192.png)
+![Logo](./public/vanshsharmaLogo.png)
 
 # 📃 Portfolio ( [LIVE DEMO](https://vanshsharma.vercel.app/) )
 
