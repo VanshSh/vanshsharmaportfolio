@@ -1,13 +1,11 @@
-import { render } from 'react-dom'
-import App from './App'
-import { ThemeProvider } from './contexts/theme'
-import 'react-alice-carousel/lib/alice-carousel.css'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
 
-render(
-
-  <ThemeProvider>
+ReactDOM.render(
+  <React.StrictMode>
     <App />
-  </ThemeProvider>,
-  document.getElementById('root')
-)
+  </React.StrictMode>,
+  document.getElementById("root")
+);

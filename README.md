@@ -6,17 +6,6 @@
 
 </div>
 
-## 📦 Features
-
-- About
-- Skills
-- Projects
-- Blogs Carousel
-- Dark/Light theme
-- Contact Form
-
-
-
 ## 👨‍💻 Tech Stack
 
 **Frontend:** ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Material UI](https://img.shields.io/badge/material%20ui-007fff?style=for-the-badge&logoColor=white)
@@ -27,6 +16,16 @@
 **Other Resources:** ![](https://img.shields.io/badge/React%20Alice%20Carousel-orange?style=for-the-badge&logoColor=white) 
 
 
+## 📦 Features to add
+- New Color Scheme
+- Current Data in data.js
+- Step wise step visit all components
+- Use Badges to show Skill in Portfolio
+- Show Hashnode Blogs
+- Add Vercel Analytics
+- Contact Form
+- Dark/Light theme
+- Probably add all things in Resume in Portfolio too
 
 ## 🔗 Contact
 
