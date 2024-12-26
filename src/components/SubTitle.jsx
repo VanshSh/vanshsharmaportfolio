@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
-function SubTitle({ name }) {
-  return <h3>{name}</h3>;
+function SubTitle({ name, ...rest }) {
+  return <h3 {...rest}>{name}</h3>
 }
 
-export default SubTitle;
+export default SubTitle

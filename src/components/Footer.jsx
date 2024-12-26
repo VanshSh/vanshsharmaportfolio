@@ -1,30 +1,21 @@
 import React from 'react'
-import {
-  AiFillCodepenCircle,
-  AiFillLinkedin,
-  AiOutlineGithub,
-  AiOutlineMail,
-} from 'react-icons/ai'
+import { AiFillLinkedin, AiOutlineGithub, AiOutlineMail } from 'react-icons/ai'
 import styled from 'styled-components'
+import data from '../data'
 
 function Footer() {
   return (
     <Container>
       <SocialLinks>
-        <Link href='mailto:palakgupta2712@gmail.com'>
+        <Link href={data.links[0].url}>
           <AiOutlineMail />
         </Link>
-        <Link href='https://github.com/palakgupta2712' target='_blank'>
-          <AiOutlineGithub />
-        </Link>
-        <Link
-          href='https://www.linkedin.com/in/palakgupta2712/'
-          target='_blank'
-        >
+
+        <Link href={data.links[1].url} target='_blank'>
           <AiFillLinkedin />
         </Link>
-        <Link href='https://www.codepen.io/palakgupta27' target='_blank'>
-          <AiFillCodepenCircle />
+        <Link href={data.links[2].url} target='_blank'>
+          <AiOutlineGithub />
         </Link>
       </SocialLinks>
     </Container>

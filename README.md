@@ -16,12 +16,13 @@
 **Other Resources:** ![](https://img.shields.io/badge/React%20Alice%20Carousel-orange?style=for-the-badge&logoColor=white) 
 
 
+
 ## 📦 Features to add
-- New Color Scheme
-- Current Data in data.js
-- Step wise step visit all components
 - Use Badges to show Skill in Portfolio
+- Projects update
+- Experiece
 - Show Hashnode Blogs
+----------------------------------------------------------------------------------------------
 - Add Vercel Analytics
 - Contact Form
 - Dark/Light theme
