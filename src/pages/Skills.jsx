@@ -40,7 +40,6 @@ export default Skills
 const TitleContainer = styled.div`
   display: flex;
   align-items: center;
-  /* font-size:   25px; */
 `
 
 const Tag = styled.p`

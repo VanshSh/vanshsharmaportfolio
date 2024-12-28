@@ -46,6 +46,3 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
 `
-const Credits = styled.div`
-  font-size: 12px;
-`

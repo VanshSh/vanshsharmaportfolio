@@ -1,53 +1,90 @@
-import React from "react";
-import styled from "styled-components";
-import Title from "../components/Title";
-import data from "../data";
+import React from 'react'
+import { BsBuildingFill } from 'react-icons/bs'
+import { RiAccountBox2Line } from 'react-icons/ri'
+import styled from 'styled-components'
+import Title from '../components/Title'
+
+import {
+  CHIP_BORDER_COLOR,
+  CHIP_TEXT_COLOR,
+  COMPANY_NAME_COLOR,
+  CONTAINER_BORDER_COLOR,
+} from '../constants'
+import data from '../data'
 
 function Experience() {
   return (
     <Wrapper>
-      <Title name="Experience" />
+      <Title name='Experience' />
       <p>
         {data.experience.map((item) => (
           <Container>
             <Header>
-              <h3>{item.post}</h3>
+              <div
+                style={{ display: 'flex', gap: '10px', alignItems: 'center' }}
+              >
+                <BsBuildingFill />
+                <h3>{item.company}</h3>
+              </div>
+
               <Tag>
                 {item.startdate} - {item.enddate}
               </Tag>
             </Header>
+            <span
+              style={{
+                display: 'flex',
+                gap: '10px',
+                marginBottom: '10px',
+                marginTop: '10px',
+                alignItems: 'center',
+              }}
+            >
+              <h5
+                style={{
+                  display: 'flex',
+                  gap: '10px',
+                  alignItems: 'center',
+                  margin: '0 0 0 22px',
+                  color: `${COMPANY_NAME_COLOR}`,
+                }}
+              >
+                <RiAccountBox2Line />
 
-            <CompanyTag>{item.company}</CompanyTag>
+                {item.post}
+              </h5>
+            </span>
             <p>{item.summary}</p>
+            <ul>
+              {item.points?.map((point) => (
+                <li style={{ margin: '9px 0' }} key={point}>
+                  {point}
+                </li>
+              ))}
+            </ul>
           </Container>
         ))}
       </p>
     </Wrapper>
-  );
+  )
 }
 
-export default Experience;
+export default Experience
 const Tag = styled.span`
   font-size: 12px;
-  border: 1px solid #d53369;
+  border: 1px solid ${CHIP_BORDER_COLOR};
   padding: 2px 7px;
   margin-right: 10px;
   border-radius: 5px;
-  color: #d53369;
-  /* background-color: #333; */
-  text-transform: uppercase;
-`;
-const CompanyTag = styled(Tag)`
-  background-color: #333;
-  border: none;
-  color: inherit;
-`;
+  color: ${CHIP_TEXT_COLOR};
+`
+
 const Container = styled.div`
-  border: 1px solid #d53369;
+  border: 1px solid ${CONTAINER_BORDER_COLOR};
   margin: 15px 0;
   padding: 10px;
   border-radius: 5px;
-`;
+`
 const Header = styled.div`
   display: flex;
   flex-direction: column;
@@ -59,8 +96,8 @@ const Header = styled.div`
     align-items: center;
     justify-content: space-between;
   }
-`;
+`
 
 const Wrapper = styled.div`
   margin-bottom: 2rem;
-`;
+`

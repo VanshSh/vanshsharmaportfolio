@@ -1,30 +1,33 @@
-import React from "react";
-import styled from "styled-components";
-import Title from "../components/Title";
-import data from "../data";
-import { BsLink45Deg } from "react-icons/bs";
-import { BsGithub } from "react-icons/bs";
-// import { BiLinkExternal } from "react-icons/bi";
+import React from 'react'
+import { BsGithub, BsLink45Deg } from 'react-icons/bs'
+import styled from 'styled-components'
+import Title from '../components/Title'
+import {
+  CHIP_BORDER_COLOR,
+  CHIP_TEXT_COLOR,
+  CONTAINER_BORDER_COLOR,
+} from '../constants'
+import data from '../data'
 function Projects() {
   return (
     <Wrapper>
-      <Title name="Projects" />
+      <Title name='Projects' />
       <div>
         {data.projects.map((item) => (
           <Container>
             <Header>
-              <ProjectTitle href={item.repo_url} target="_blank">
+              <ProjectTitle href={item.repo_url} target='_blank'>
                 {item.name}
               </ProjectTitle>
-              <div>
+              <div style={{ display: 'flex', gap: '10px' }}>
                 {item.live_url && (
-                  <Link href={item.live_url} target="_blank">
+                  <Link href={item.live_url} target='_blank'>
                     <BsLink45Deg />
                     Demo
                   </Link>
                 )}
                 {item.repo_url && (
-                  <Link href={item.repo_url} target="_blank">
+                  <Link href={item.repo_url} target='_blank'>
                     <BsGithub />
                     Github
                   </Link>
@@ -32,6 +35,7 @@ function Projects() {
               </div>
             </Header>
             <p>{item.summary}</p>
+
             {item.tags.map((tag) => (
               <Tag> {tag} </Tag>
             ))}
@@ -39,37 +43,35 @@ function Projects() {
         ))}
       </div>
     </Wrapper>
-  );
+  )
 }
 
-export default Projects;
+export default Projects
 const Tag = styled.span`
   font-size: 10px;
   border: 1px solid #333;
   padding: 2px 7px;
   margin-right: 10px;
   border-radius: 5px;
-  /* color: #606060; */
   background-color: #333;
   text-transform: uppercase;
-`;
+`
 const Link = styled.a`
   font-size: 14px;
-  border: 1px solid #d53369;
+  border: 1px solid ${CHIP_BORDER_COLOR};
   padding: 2px 10px;
   margin-right: 10px;
   border-radius: 5px;
-  color: #d53369;
+  color: ${CHIP_TEXT_COLOR};
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   svg {
     margin-right: 5px;
   }
-  /* background-color: #333; */
-`;
+`
 const Container = styled.div`
-  border: 1px solid #d53369;
+  border: 1px solid ${CONTAINER_BORDER_COLOR};
   margin: 20px 0;
   padding: 10px;
   border-radius: 5px;
@@ -77,7 +79,7 @@ const Container = styled.div`
   &:hover {
     transform: scale(1.05);
   }
-`;
+`
 const Header = styled.div`
   display: flex;
   flex-direction: column;
@@ -89,15 +91,15 @@ const Header = styled.div`
     align-items: center;
     justify-content: space-between;
   }
-`;
+`
 
 const ProjectTitle = styled.a`
   text-decoration: none;
   color: inherit;
   font-size: 18px;
   font-weight: 600;
-`;
+`
 
 const Wrapper = styled.div`
   margin-bottom: 2rem;
-`;
+`

@@ -18,15 +18,12 @@
 
 
 ## 📦 Features to add
+- Sticky Header
+- [Show Hashnode Blogs](https://stephengade.hashnode.dev/how-to-fetch-your-hashnode-articles-for-your-portfolio-with-react-vue-and-nextjs)
 - Use Badges to show Skill in Portfolio
-- Projects update
-- Experiece
-- Show Hashnode Blogs
-----------------------------------------------------------------------------------------------
-- Add Vercel Analytics
 - Contact Form
-- Dark/Light theme
 - Probably add all things in Resume in Portfolio too
+- Dark/Light theme
 
 ## 🔗 Contact
 

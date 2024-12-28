@@ -13,11 +13,7 @@ import Skills from './pages/Skills'
 function App() {
   return (
     <React.Fragment>
-      <div
-        style={{
-          height: '90vh',
-        }}
-      >
+      <div style={{ marginBottom: '50px' }}>
         <Heading />
         <Introduction />
         <Container>
