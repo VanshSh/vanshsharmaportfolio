@@ -18,6 +18,7 @@
 
 
 ## 📦 Features to add
+- Fix mobile UI
 - Sticky Header
 - [Show Hashnode Blogs](https://stephengade.hashnode.dev/how-to-fetch-your-hashnode-articles-for-your-portfolio-with-react-vue-and-nextjs)
 - Use Badges to show Skill in Portfolio
