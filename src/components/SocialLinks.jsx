@@ -4,7 +4,7 @@ function SocialLinks() {
   return (
     <div>
       {data.links.map((item) => (
-        <a href={item.url} target='_blank' rel='noreferrer'>
+        <a key={item.name} href={item.url} target='_blank' rel='noreferrer'>
           {item.name} |{' '}
         </a>
       ))}

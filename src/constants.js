@@ -10,3 +10,22 @@ export const CHIP_BORDER_COLOR = 'rgba(244, 144, 12, 1)'
 export const CHIP_TEXT_COLOR = 'rgba(244, 144, 12, 1)'
 export const COMPANY_NAME_COLOR = 'rgb(230, 229, 150)'
 export const CONTAINER_BORDER_COLOR = 'rgba(244, 143, 12, 0.5)'
+
+export const GET_PUBLICATION_POSTS_GRAPHQL_QUERY = `
+  query Publication {
+    publication(host: "vanshsharma.hashnode.dev") {
+      posts(first: 50) {
+        edges {
+          node {
+            title
+            url
+            id
+            coverImage {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+`

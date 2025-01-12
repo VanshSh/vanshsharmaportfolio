@@ -1,16 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Footer from './components/Footer'
 import Heading from './components/Heading'
 import Introduction from './components/Introduction'
 import Resume from './components/Resume'
 import SocialLinks from './components/SocialLinks'
-import { LINEAR_GRADIENTS } from './constants'
+import {
+  GET_PUBLICATION_POSTS_GRAPHQL_QUERY,
+  LINEAR_GRADIENTS,
+} from './constants'
+import { gql } from './helper'
 import Experience from './pages/Experience'
 import Projects from './pages/Projects'
 import Skills from './pages/Skills'
 
 function App() {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await gql(GET_PUBLICATION_POSTS_GRAPHQL_QUERY)
+        console.log(response.data.publication.posts.edges)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
+    fetchData()
+  }, [])
   return (
     <React.Fragment>
       <div style={{ marginBottom: '50px' }}>

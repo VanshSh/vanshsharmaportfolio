@@ -25,18 +25,18 @@ const data = {
       icon: <HiOutlineDesktopComputer style={{ marginRight: '10px' }} />,
       key: 'development',
       values: [
-        'HTML5',
-        'CSS3',
         'JavaScript(ES6)',
         'React.js',
-        'Bootstrap CSS',
-        'Material-UI',
-        'styled-components',
-        'Storybook',
-        'Redux',
-        'Redux Toolkit',
-        'Router',
         'TypeScript',
+        'Redux Toolkit',
+        'Redux',
+        'Router',
+        'Material-UI',
+        'Storybook',
+        'styled-c omponents',
+        'HTML5',
+        'CSS3',
+        'Bootstrap CSS',
       ],
     },
     {
@@ -68,7 +68,7 @@ const data = {
   archive_project: [],
   experience: [
     {
-      company: 'Intangles Lab Pvt. Ltd. ( Pune )',
+      company: 'Intangles Lab Pvt. Ltd. ( Pune, IN )',
       post: 'Frontend Developer',
       summary:
         'Intangles is leveraging Digital Twin Technology to enhance the operational efficiency of vehicles worldwide, offering a top-tier Vehicle Health Monitoring Platform. ',
@@ -81,7 +81,7 @@ const data = {
       enddate: 'Present',
     },
     {
-      company: 'Seventh Triangle ( Noida )',
+      company: 'Seventh Triangle ( Noida, IN )',
       post: 'Frontend Developer',
       summary:
         'Intangles is leveraging Digital Twin Technology to enhance the operational efficiency of vehicles worldwide, offering a top-tier Vehicle Health Monitoring Platform. ',
@@ -94,7 +94,7 @@ const data = {
       enddate: 'Feb 2024',
     },
     {
-      company: 'Now&Me ( Gurugram )',
+      company: 'Now&Me ( Gurugram, IN )',
       post: 'Frontend Developer Intern',
       summary: '',
       points: [

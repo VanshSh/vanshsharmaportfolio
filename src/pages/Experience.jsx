@@ -16,9 +16,9 @@ function Experience() {
   return (
     <Wrapper>
       <Title name='Experience' />
-      <p>
+      <div>
         {data.experience.map((item) => (
-          <Container>
+          <Container key={item.company}>
             <Header>
               <div
                 style={{ display: 'flex', gap: '10px', alignItems: 'center' }}
@@ -64,7 +64,7 @@ function Experience() {
             </ul>
           </Container>
         ))}
-      </p>
+      </div>
     </Wrapper>
   )
 }

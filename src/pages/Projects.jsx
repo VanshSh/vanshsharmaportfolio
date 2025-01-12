@@ -14,7 +14,7 @@ function Projects() {
       <Title name='Projects' />
       <div>
         {data.projects.map((item) => (
-          <Container>
+          <Container key={item.name}>
             <Header>
               <ProjectTitle href={item.repo_url} target='_blank'>
                 {item.name}
@@ -37,7 +37,7 @@ function Projects() {
             <p>{item.summary}</p>
 
             {item.tags.map((tag) => (
-              <Tag> {tag} </Tag>
+              <Tag key={tag}> {tag} </Tag>
             ))}
           </Container>
         ))}
