@@ -71,7 +71,7 @@ const data = {
       company: 'Intangles Lab Pvt. Ltd. ( Pune, IN )',
       post: 'Frontend Developer',
       summary:
-        'Intangles is leveraging Digital Twin Technology to enhance the operational efficiency of vehicles worldwide, offering a top-tier Vehicle Health Monitoring Platform. ',
+        'Seventh Triangle is a Direct to Consumer focussed Marketing and Technology integrated Agency.',
       points: [
         `Contributed to the development of the internal component library utilizing Storybook.`,
         `Served as the lead developer for Tiber Taber's Ecommerce platform, collaborating with an exceptional developer. Our joint efforts are focused on creating a user-friendly platform and integrating client details.`,
