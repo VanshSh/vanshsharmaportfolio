@@ -38,7 +38,7 @@ function App() {
         </Container>
       </div>
       <Skills />
-      <Projects />
+      {/* <Projects /> */}
       <Experience />
       <Footer />
     </React.Fragment>
