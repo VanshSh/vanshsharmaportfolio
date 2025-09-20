@@ -125,6 +125,7 @@ const data = {
       enddate: 'Sep 2022',
     },
   ],
-  resume: 'https://rxresu.me/vanshsharma9354/vansh-sharma',
+  resume:
+    'https://drive.google.com/file/d/1Mbx2L86HhEBlAHymtIOBjKIC6hWoPeuG/view?usp=sharing',
 }
 export default data
