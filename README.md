@@ -2,32 +2,43 @@
 
 ![Logo](./public/vanshsharmaLogo.png)
 
-# 📃 Portfolio ( [LIVE DEMO](https://vanshsharma.vercel.app/) )
+# Vansh Sharma — Portfolio ([live](https://vanshsharma.vercel.app/))
 
 </div>
 
-## 👨‍💻 Tech Stack
+Single-page portfolio built with **React 19 + TypeScript + Vite**, animated with **Motion** (Framer Motion) and **Lenis** smooth scrolling. Dark and light themes, fully responsive.
 
-**Frontend:** ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Material UI](https://img.shields.io/badge/material%20ui-007fff?style=for-the-badge&logoColor=white)
+## Run locally
 
+```bash
+npm install
+npm run dev        # http://localhost:5173
+npm run build      # production build → ./build
+npm run preview    # serve the production build
+```
 
-**Host:** ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+## Update content
 
-**Other Resources:** ![](https://img.shields.io/badge/React%20Alice%20Carousel-orange?style=for-the-badge&logoColor=white) 
+Everything on the page comes from one typed file: [`src/data/site.ts`](./src/data/site.ts) — profile, hero stats, skills, experience, projects, about, contact. Drop a new PDF into `public/resume/` and update `profile.resumeUrl`.
 
+Bullets support `**bold**` which renders in the accent colour.
 
+## Structure
 
-## 📦 Features to add
-- Fix mobile UI
-- Sticky Header
-- [Show Hashnode Blogs](https://stephengade.hashnode.dev/how-to-fetch-your-hashnode-articles-for-your-portfolio-with-react-vue-and-nextjs)
-- Use Badges to show Skill in Portfolio
-- Contact Form
-- Probably add all things in Resume in Portfolio too
-- Dark/Light theme
+```
+src/
+  data/site.ts          all content
+  styles/global.css     design tokens (both themes), base, buttons
+  hooks/                useTheme (view-transition toggle), useLenis, useReducedMotion
+  components/
+    ui/                 Reveal, MagneticButton, TiltCard, CursorGlow, RichText
+    Nav | Hero | Marquee | Skills | Experience | Projects | About | Contact
+```
 
-## 🔗 Contact
+## Design notes
 
-[![Portfolio](https://img.shields.io/badge/My%20Portfolio-FF6C37?style=for-the-badge&&logoColor=white)](http://vanshsharma.vercel.app/)
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vanshsharma27/)
-[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/Vanshsh2701)
+- Palette derived from [this Coolors set](https://coolors.co/cc444b-da5552-df7373-e39695-e4b1ab). Each theme uses the member that passes WCAG AA for text on its background: `#df7373` on dark (6.1:1), `#b33a40` on light (5.5:1); `#cc444b` for fills.
+- Type: Bricolage Grotesque (display) + Instrument Sans (body), via Google Fonts.
+- Motion respects `prefers-reduced-motion`; smooth scroll, tilt and cursor glow are disabled on touch / reduced-motion.
+
+Deployed on Vercel (`vercel.json` points the output to `build/`).

@@ -1,0 +1,48 @@
+.hero {
+  min-height: 100svh; display: grid; align-content: center;
+  padding-top: 110px; padding-bottom: 80px; position: relative; overflow: hidden;
+}
+.hero__status {
+  display: inline-flex; align-items: center; gap: 10px; font-size: 13.5px; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px 6px 8px; margin-bottom: 28px;
+  background: color-mix(in srgb, var(--surface) 60%, transparent);
+}
+.hero__status b {
+  display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%;
+  background: var(--accent-soft); color: var(--accent); font-size: 11px;
+}
+.hero__name {
+  font-family: var(--ff-display); font-weight: 800; letter-spacing: -0.05em; line-height: 0.9;
+  font-size: clamp(56px, 13vw, 172px); margin-left: -0.04em;
+}
+.hero__w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.06em; }
+.hero__w > span { display: inline-block; }
+.hero__name em { font-style: normal; color: var(--accent); font-weight: 300; font-variation-settings: 'opsz' 96; }
+
+.hero__lede {
+  display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px;
+  margin-top: clamp(28px, 4vw, 48px); align-items: end;
+}
+.hero__lede p { font-size: clamp(17px, 1.6vw, 21px); max-width: 52ch; }
+.hero__lede p span { color: var(--muted); }
+.hero__cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
+
+/* telemetry trace */
+.trace { position: absolute; right: -5vw; top: 16%; width: min(62vw, 820px); pointer-events: none; opacity: 0.9; }
+.trace__ghost { fill: none; stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 6; }
+.trace__line { fill: none; stroke: var(--accent-fill); stroke-width: 1.5; filter: drop-shadow(0 0 10px var(--accent-glow)); }
+.trace__node circle { fill: var(--bg); stroke: var(--accent-fill); stroke-width: 2; }
+.trace__node circle.core { fill: var(--accent-fill); stroke: none; animation: trace-pulse 2.2s infinite; }
+.trace__node text { font-family: var(--ff-body); font-size: 12px; fill: var(--muted); font-weight: 500; }
+.trace__node text.v { font-family: var(--ff-display); font-weight: 700; font-size: 20px; fill: var(--text); letter-spacing: -0.02em; }
+@keyframes trace-pulse { 0%, 100% { r: 4; } 50% { r: 6; } }
+
+@media (max-width: 860px) {
+  .hero__lede { grid-template-columns: 1fr; gap: 28px; }
+  .hero__cta { justify-content: flex-start; }
+  .trace { position: relative; right: auto; top: auto; width: 100%; margin-top: 40px; opacity: 1; }
+  .trace__node text { font-size: 19px; }
+  .trace__node text.v { font-size: 30px; }
+  .trace__node circle { stroke-width: 3; }
+  .trace__line { stroke-width: 2.5; }
+}
