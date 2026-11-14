@@ -1,0 +1,26 @@
+#contact { padding: clamp(80px, 12vw, 160px) 0 120px; }
+.contact {
+  border: 1px solid var(--line); border-radius: var(--r-lg); padding: clamp(32px, 5vw, 64px);
+  background: linear-gradient(135deg, var(--surface), var(--bg-2)); position: relative; overflow: hidden;
+}
+.contact::after {
+  content: ''; position: absolute; width: 520px; height: 520px; right: -180px; bottom: -260px; border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-glow), transparent 65%); filter: blur(10px); pointer-events: none;
+}
+.contact h2 { font-family: var(--ff-display); font-size: clamp(40px, 7vw, 96px); font-weight: 800; letter-spacing: -0.05em; line-height: 0.95; max-width: 12ch; }
+.contact h2 em { font-style: normal; font-weight: 300; color: var(--accent); }
+.contact__row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; position: relative; z-index: 1; }
+.contact__lines {
+  margin-top: 40px; display: grid; grid-template-columns: repeat(3, auto); gap: 28px; justify-content: start;
+  font-size: 15px; position: relative; z-index: 1;
+}
+.contact__lines small { display: block; color: var(--muted); font-size: 12.5px; margin-bottom: 3px; }
+.contact__lines a:hover { color: var(--accent); }
+.contact__socials { display: flex; gap: 18px; }
+.contact__socials a { display: inline-flex; align-items: center; gap: 7px; transition: color 0.3s; }
+.contact__socials a svg { width: 17px; height: 17px; }
+.footer { padding: 40px 0 0; color: var(--muted); font-size: 13.5px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+@media (max-width: 720px) {
+  .contact__lines { grid-template-columns: 1fr; gap: 16px; }
+  .footer { padding-bottom: 70px; }
+}

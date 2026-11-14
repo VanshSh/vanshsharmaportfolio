@@ -1,0 +1,17 @@
+.about { padding: clamp(60px, 8vw, 100px) 0; border-top: 1px solid var(--line); }
+.about__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.about h2 { font-family: var(--ff-display); font-size: clamp(28px, 3.6vw, 44px); font-weight: 600; letter-spacing: -0.03em; line-height: 1.15; max-width: 22ch; }
+.about p { color: var(--muted); font-size: 16px; max-width: 56ch; }
+.creds { margin-top: 28px; display: grid; gap: 10px; }
+.cred { display: flex; gap: 14px; align-items: center; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+.cred i {
+  width: 36px; height: 36px; border-radius: 10px; background: var(--accent-soft); display: grid; place-items: center;
+  color: var(--accent); font-style: normal; font-weight: 700; font-family: var(--ff-display); flex-shrink: 0;
+}
+.cred b { display: block; font-weight: 600; }
+.cred small { color: var(--muted); }
+.cred--link { transition: border-color 0.3s, background 0.3s; }
+.cred--link:hover { border-color: var(--accent); background: var(--bg-2); }
+.cred--link > svg { width: 16px; height: 16px; margin-left: auto; color: var(--muted); flex-shrink: 0; transition: color 0.3s, transform 0.3s var(--ease); }
+.cred--link:hover > svg { color: var(--accent); transform: translate(2px, -2px); }
+@media (max-width: 860px) { .about__grid { grid-template-columns: 1fr; gap: 24px; } }
