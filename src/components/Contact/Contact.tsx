@@ -1,5 +1,5 @@
 import { profile } from '@/data/site'
-import { DownloadIcon, MagneticButton } from '@/components/ui/MagneticButton'
+import { DownloadIcon, GithubIcon, LinkedinIcon, MagneticButton } from '@/components/ui/MagneticButton'
 import { Reveal } from '@/components/ui/Reveal'
 import './Contact.css'
 
@@ -15,8 +15,8 @@ export function Contact() {
             <MagneticButton href={`mailto:${profile.email}`} variant="primary">
               Email me
             </MagneticButton>
-            <MagneticButton href={profile.resumeUrl} download={profile.resumeFileName}>
-              Download resume <DownloadIcon />
+            <MagneticButton href={profile.resumeLink} target="_blank" rel="noreferrer">
+              View resume <DownloadIcon />
             </MagneticButton>
           </div>
           <div className="contact__lines">
@@ -30,15 +30,19 @@ export function Contact() {
             </div>
             <div>
               <small>Elsewhere</small>
-              <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-              <span className="contact__sep">·</span>
-              <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
+              <div className="contact__socials">
+                <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                  <LinkedinIcon /> LinkedIn
+                </a>
+                <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub">
+                  <GithubIcon /> GitHub
+                </a>
+              </div>
             </div>
           </div>
         </Reveal>
         <footer className="footer">
           <span>© {new Date().getFullYear()} {profile.name}</span>
-          <span>Built with React, Vite, Motion &amp; Lenis</span>
         </footer>
       </div>
     </section>

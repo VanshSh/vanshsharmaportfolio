@@ -3,45 +3,48 @@
  * Update this file when the resume changes — no component edits needed.
  */
 
+/**
+ * Years of experience, counted from the first job so it never needs manual
+ * updating. Rounded to the nearest half-year (e.g. "4.5").
+ */
+const CAREER_START = new Date('2022-05-01')
+export const yearsExperience = (
+  Math.round(((Date.now() - CAREER_START.getTime()) / (1000 * 60 * 60 * 24 * 365.25)) * 2) / 2
+).toString()
+
 export const profile = {
   name: 'Vansh Sharma',
   firstName: 'Vansh',
   lastName: 'Sharma',
   title: 'Software Developer',
-  status: 'Open to fullstack roles · Pune / Remote',
+  status: 'Open to Software Developer roles',
   summary:
-    'Software Developer with 4.5 years building production web apps across React/TypeScript frontends and REST APIs.',
+    `Software Developer with ${yearsExperience} years building production web apps across React/TypeScript frontends and REST APIs.`,
   summaryDetail:
     'Most recently: connected-vehicle telematics at Intangles — real-time WebSocket alerting, an end-to-end feature-flag service, and a full Angular-to-React migration.',
   email: 'vanshsharma9354@gmail.com',
   phone: '+91 79880 06877',
   phoneHref: 'tel:+917988006877',
   location: 'Pune, MH',
+  /** Shared Google Drive link used by the "resume" buttons. */
+  resumeLink: 'https://drive.google.com/file/d/1raQuKb_7Lz48Chvr1MOoX-rKH29EGL4p/view?usp=sharing',
+  /** Local PDF kept in assets as a fallback copy. */
   resumeUrl: '/resume/Vansh_Sharma_Software_Developer.pdf',
   resumeFileName: 'Vansh_Sharma_Software_Developer.pdf',
   linkedin: 'https://www.linkedin.com/in/vanshsharma27/',
   github: 'https://github.com/VanshSh',
 } as const
 
-/** Numbers plotted on the hero telemetry trace. Keep to 4. */
-export const heroStats = [
-  { value: '100K+', label: 'connected vehicles' },
-  { value: '−40%', label: 'maintenance effort' },
-  { value: '−30%', label: 'UI build time' },
-  { value: '48 → 91', label: 'Lighthouse performance' },
-] as const
-
 export const marquee = [
   'React', 'TypeScript', 'Node.js', 'Next.js', 'Redux Toolkit', 'Redux Saga', 'WebSockets',
   'Express', 'MongoDB', 'MySQL', 'Storybook', 'Playwright', 'Docker', 'GitHub Actions', 'Claude Code',
 ]
 
-export type SkillGroup = { title: string; tag?: string; items: string[] }
+export type SkillGroup = { title: string; items: string[] }
 
 export const skills: SkillGroup[] = [
   {
     title: 'Frontend',
-    tag: 'core',
     items: ['React.js', 'Next.js', 'React Native', 'Redux Toolkit', 'Redux Saga', 'Zustand', 'React Hook Form', 'Tailwind CSS', 'Material UI', 'Chart.js', 'Storybook'],
   },
   { title: 'Languages', items: ['JavaScript (ES6+)', 'TypeScript', 'SQL', 'HTML5', 'CSS3', 'Liquid (Shopify)'] },
@@ -56,7 +59,6 @@ export const skills: SkillGroup[] = [
   },
   {
     title: 'AI-assisted engineering',
-    tag: 'daily',
     items: ['Claude Code (custom skills & workflows)', 'Cursor', 'Prompt engineering for codegen & review', 'WCAG accessibility', 'Performance', 'Agile / Scrum'],
   },
 ]
@@ -123,9 +125,11 @@ export type Project = {
   title: string
   description: string
   tools: string[]
-  /** Large light-weight figure shown on the card. */
-  stat?: string
-  /** Renders the interactive feature-flag demo on a full-width card. */
+  /** Public source repo, shown as a GitHub link on the card. */
+  github?: string
+  /** Live/preview URL, shown as a "Live preview" link on the card. */
+  live?: string
+  /** Spans the full width of the grid as the flagship card. */
   featured?: boolean
 }
 
@@ -146,16 +150,14 @@ export const projects: Project[] = [
     description:
       'Customer-facing features from scratch: real-time vehicle parameters, predictive alerts, DTC fault codes, map tracking and historical charts. Built the design system and Storybook components behind it, partnering with product and design to ship accessible interfaces.',
     tools: ['React', 'TypeScript', 'Storybook', 'Material UI'],
-    stat: 'Live',
   },
   {
     kind: 'Migration · Intangles',
     year: '2024',
     title: 'FOTA Code Management Dashboard',
     description:
-      'Internal dashboard to track, update and edit firmware-over-the-air releases across a fleet of 100K+ connected vehicles — migrated from Angular to React for performance and compatibility.',
+      'Internal dashboard to track, update and edit firmware-over-the-air releases across  fleets of connected vehicles — migrated from Angular to React for performance and compatibility.',
     tools: ['React.js', 'Redux Toolkit', 'Redux Saga', 'Material UI'],
-    stat: '100K+',
   },
   {
     kind: 'E-commerce · Seventh Triangle',
@@ -164,7 +166,6 @@ export const projects: Project[] = [
     description:
       "Complete frontend revamp of V-Guard's e-commerce storefront. Responsive, high-performance UI; owned code quality and on-time delivery in close collaboration with client stakeholders.",
     tools: ['Shopify (Liquid)', 'JavaScript', 'HTML5', 'CSS3'],
-    stat: '48→91',
   },
   {
     kind: 'Tooling · Claude Code skill',
@@ -173,24 +174,33 @@ export const projects: Project[] = [
     description:
       'A Claude Code skill with 8 audit modes — Figma audit, v1→v2 parity, API checks, edge cases, code review and more — so a frontend change gets reviewed the same way every time.',
     tools: ['Claude Code', 'Playwright', 'Figma'],
-    stat: '8',
   },
 ]
 
-export const featureFlagsDemo = [
-  { name: 'predictive-alerts-v2', scope: 'prod · all accounts', on: true },
-  { name: 'map-clustering', scope: 'staging · role: fleet-admin', on: true },
-  { name: 'fota-bulk-update', scope: 'prod · 3 accounts included', on: false },
-  { name: 'kill-switch', scope: 'master · instant rollback', on: false },
-]
+export type Credential = { mark: string; title: string; sub: string; href?: string }
 
-export const about = {
+export const about: {
+  headline: string
+  body: string
+  credentials: Credential[]
+} = {
   headline: 'Frontend-deep for four years. Now building the whole feature, API included.',
   body:
     'I started on storefronts and landing pages, moved into B2B telematics, and the last year has been full-stack: designing REST APIs, modelling data, and owning features from schema to screen. I care about state architecture, performance budgets, accessibility, and using AI tooling in a way that raises the quality bar instead of lowering it.',
   credentials: [
     { mark: 'DU', title: 'University of Delhi — B.Sc.', sub: 'Aug 2018 — May 2021' },
-    { mark: 'A', title: 'Claude Code in Action — Anthropic', sub: 'Issued Mar 2026 · credential kjkrq3maiaqe' },
+    {
+      mark: 'A',
+      title: 'Claude Code in Action — Anthropic',
+      sub: 'Issued Mar 2026 · agentic coding, custom skills & workflows',
+      href: 'https://verify.skilljar.com/c/kjkrq3maiaqe',
+    },
+    {
+      mark: 'M',
+      title: 'Forward Program — McKinsey.org',
+      sub: 'Leadership, problem-solving & digital skills',
+      href: 'https://www.credly.com/badges/f09d49a8-c972-4323-b910-52b0f7724d2c/linked_in_profile',
+    },
   ],
 }
 

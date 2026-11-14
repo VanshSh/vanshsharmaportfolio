@@ -16,7 +16,9 @@
 }
 .contact__lines small { display: block; color: var(--muted); font-size: 12.5px; margin-bottom: 3px; }
 .contact__lines a:hover { color: var(--accent); }
-.contact__sep { margin: 0 10px; color: var(--muted); }
+.contact__socials { display: flex; gap: 18px; }
+.contact__socials a { display: inline-flex; align-items: center; gap: 7px; transition: color 0.3s; }
+.contact__socials a svg { width: 17px; height: 17px; }
 .footer { padding: 40px 0 0; color: var(--muted); font-size: 13.5px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 @media (max-width: 720px) {
   .contact__lines { grid-template-columns: 1fr; gap: 16px; }

@@ -1,5 +1,5 @@
 import { motion } from 'motion/react'
-import { heroStats, profile } from '@/data/site'
+import { profile } from '@/data/site'
 import { ArrowIcon, DownloadIcon, MagneticButton } from '@/components/ui/MagneticButton'
 import { TelemetryTrace } from './TelemetryTrace'
 import './Hero.css'
@@ -47,14 +47,14 @@ export function Hero() {
             <MagneticButton href="#projects" variant="primary">
               See the work <ArrowIcon />
             </MagneticButton>
-            <MagneticButton href={profile.resumeUrl} download={profile.resumeFileName}>
-              Download resume <DownloadIcon />
+            <MagneticButton href={profile.resumeLink} target="_blank" rel="noreferrer">
+              View resume <DownloadIcon />
             </MagneticButton>
           </motion.div>
         </div>
       </div>
 
-      <TelemetryTrace stats={heroStats} />
+      <TelemetryTrace />
     </section>
   )
 }

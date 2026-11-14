@@ -3,13 +3,19 @@
   padding-top: 110px; padding-bottom: 80px; position: relative; overflow: hidden;
 }
 .hero__status {
-  display: inline-flex; align-items: center; gap: 10px; font-size: 13.5px; color: var(--muted);
-  border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px 6px 8px; margin-bottom: 28px;
-  background: color-mix(in srgb, var(--surface) 60%, transparent);
+  display: inline-flex; align-items: center; gap: 11px; font-size: 15px; font-weight: 600;
+  letter-spacing: -0.01em; color: var(--accent);
+  border: 1px solid var(--accent); border-radius: 999px; padding: 9px 20px 9px 10px; margin-bottom: 28px;
+  background: var(--accent-soft);
 }
 .hero__status b {
-  display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%;
-  background: var(--accent-soft); color: var(--accent); font-size: 11px;
+  display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%;
+  background: var(--accent-fill); color: var(--on-accent); font-size: 11px;
+  animation: status-pulse 2.4s var(--ease) infinite;
+}
+@keyframes status-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--accent-glow); }
+  50% { box-shadow: 0 0 0 7px transparent; }
 }
 .hero__name {
   font-family: var(--ff-display); font-weight: 800; letter-spacing: -0.05em; line-height: 0.9;

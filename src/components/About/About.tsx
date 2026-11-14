@@ -1,4 +1,5 @@
 import { about } from '@/data/site'
+import { ExternalIcon } from '@/components/ui/MagneticButton'
 import { Reveal } from '@/components/ui/Reveal'
 import './About.css'
 
@@ -12,15 +13,27 @@ export function About() {
         <Reveal delay={0.1}>
           <p>{about.body}</p>
           <div className="creds">
-            {about.credentials.map((c) => (
-              <div className="cred" key={c.title}>
-                <i>{c.mark}</i>
-                <div>
-                  <b>{c.title}</b>
-                  <small>{c.sub}</small>
+            {about.credentials.map((c) => {
+              const inner = (
+                <>
+                  <i>{c.mark}</i>
+                  <div>
+                    <b>{c.title}</b>
+                    <small>{c.sub}</small>
+                  </div>
+                  {c.href && <ExternalIcon />}
+                </>
+              )
+              return c.href ? (
+                <a className="cred cred--link" key={c.title} href={c.href} target="_blank" rel="noreferrer">
+                  {inner}
+                </a>
+              ) : (
+                <div className="cred" key={c.title}>
+                  {inner}
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </Reveal>
       </div>
